@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Button Color</title>
+    <style>
+        body {
+	    background-image: url('images/2.jpg');
+
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Style for the button */
+        #colorButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Button Color</h1>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Event listener for the button click
+        const button = document.getElementById("colorButton");
+
+        button.addEventListener("click", function () {
+            const randomColor = getRandomColor();
+            button.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>
